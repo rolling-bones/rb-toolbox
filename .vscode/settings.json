@@ -1,0 +1,13 @@
+{
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "trailing",
+    "editor.insertSpaces": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+    }
+}
