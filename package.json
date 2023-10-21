@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "devSetup": "curl https://get.volta.sh | bash && husky install && npm ci",
+    "start": "node index.js",
+    "start:dev": "node --watch index.js",
     "precommit": "eslint .",
     "lint": "eslint src/**/*.{js}",
     "lint:fix": "eslint - fix src/**/*.{js}",
