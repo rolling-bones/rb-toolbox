@@ -1,4 +1,4 @@
-import { doubleSpaces, zeroWidthCharacters } from './regex.js';
+import { newLines, whitespace, zeroWidthCharacters } from './regex.js';
 
 /**
  * Trims excess whitespace from a string.
@@ -7,14 +7,15 @@ import { doubleSpaces, zeroWidthCharacters } from './regex.js';
 
 export const trim = (string) => {
   return string
-    .replace(doubleSpaces, ' ')
+    .replace(newLines, ' ')
+    .replace(whitespace, ' ')
     .replace(zeroWidthCharacters, '')
     .trim();
 };
 
 const testTrim = () => {
-  const input = ' actual  string ';
-  const expected = 'actual string';
+  const input = ' actual  str     ing\n';
+  const expected = 'actual str ing';
   const actual = trim(input);
 
   console.log('Expected: ', expected);
@@ -25,5 +26,8 @@ const testTrim = () => {
   // should remove preceding whitespace
   // should remove trailing whitespace
   // should remove zero width characters
+  // should remove new lines characters
   // should error if input is invalid
 };
+
+testTrim();

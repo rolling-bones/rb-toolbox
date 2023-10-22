@@ -2,7 +2,7 @@ import { trim } from './trim.js';
 
 /**
  * Determines if a string is empty.
- * @param {string} string - String to checked.
+ * @param {string} string - String to be checked.
  */
 
 export const isEmpty = (string) => {
