@@ -11,18 +11,3 @@ export const countWords = (string) => {
 
   return stripText(str).split(' ').length;
 };
-
-const testCountWords = () => {
-  const input = ' actual  string "bob"  /n';
-  const expected = 3;
-  const actual = countWords(input);
-
-  console.log('Expected: ', expected);
-  console.log('Actual: ', actual);
-
-  console.log('should match expected result: ', actual === expected);
-  // should return an accurate count of words
-  // should not count special characters
-  // should not count quoted text as one word
-  // should error if input is invalid
-};

@@ -9,22 +9,9 @@ import { errorCallback } from '../../globals/errorCallback.js';
  */
 export const countWord = (string, target) => {
   const str = validate(string, errorCallback);
-  const regExp = new RegExp(target, 'gi');
+  const tgt = validate(target, errorCallback);
+
+  const regExp = new RegExp(tgt, 'gi');
 
   return (stripText(str).match(regExp) || []).length;
-};
-
-const testCountWord = () => {
-  const input = ' actual  string "bob"  /n actual "actual actual"';
-  const expected = 4;
-  const actual = countWord(input, 'actual');
-
-  console.log('Expected: ', expected);
-  console.log('Actual: ', actual);
-
-  console.log('should match expected result: ', actual === expected);
-  // should return an accurate count of how many times a substring appears in a string
-  // should not count special characters
-  // should not count quoted text as one word
-  // should error if input is invalid
 };

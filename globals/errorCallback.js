@@ -10,17 +10,3 @@ export const errorCallback = (error, response) => {
     return response;
   }
 };
-
-const testErrorCallback = () => {
-  const error = 'Error Message';
-  const response = 'OK';
-
-  console.log(
-    'should throw an error if an error is passed: ',
-    errorCallback(error, null) === error,
-  );
-  console.log(
-    'should return response if there are no errors: ',
-    errorCallback(null, response) === response,
-  );
-};

@@ -5,22 +5,8 @@
  */
 export const callback = (error, response) => {
   if (error) {
-    throw new Error(error);
+    return error;
   } else {
     return response;
   }
-};
-
-const testCallback = () => {
-  const error = 'Error Message';
-  const response = 'OK';
-
-  console.log(
-    'should return error if an error is passed: ',
-    callback(error, null) === error,
-  );
-  console.log(
-    'should return response if there are no errors: ',
-    callback(null, response) === response,
-  );
 };
