@@ -1,14 +1,14 @@
-import { validateString } from "../validationUtils/validateString.js";
-import {stripText } from "../stringUtils/stripText.js";
+import { validate } from '../utils/validate.js';
+import { stripText } from '../utils/stripText.js';
+import { errorCallback } from '../../globals/errorCallback.js';
 
 /**
- * Counts the number of times the target word appears in the string.
+ * Counts the number of times the target word appears in the provided string.
  * @param {string} string - String to be evaluated.
  * @param {string} target - Target word to be searched for.
  */
-
 export const countWord = (string, target) => {
-  const str = validateString(string);
+  const str = validate(string, errorCallback);
   const regExp = new RegExp(target, 'gi');
 
   return (stripText(str).match(regExp) || []).length;
@@ -17,7 +17,7 @@ export const countWord = (string, target) => {
 const testCountWord = () => {
   const input = ' actual  string "bob"  /n actual "actual actual"';
   const expected = 4;
-  const actual = countWord(input);
+  const actual = countWord(input, 'actual');
 
   console.log('Expected: ', expected);
   console.log('Actual: ', actual);

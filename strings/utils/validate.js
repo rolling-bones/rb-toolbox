@@ -1,19 +1,18 @@
-import { invalidInput, notAString } from './errorMessages.js';
-import { isEmpty } from '../stringUtils/isEmpty.js';
+import { invalidInput, notAString } from '../../globals/errorMessages.js';
+import { isEmpty } from './isEmpty.js';
 
 /**
  * Determines if a string is valid.
  * @param {string} string - String to checked.
  * @param {Function} cb - Callback function to relay the result.
  */
-
-export const validateString = (string, cb) => {
+export const validate = (string, cb) => {
   const inputType = typeof string;
 
   if (inputType !== 'string') {
     throw new Error(invalidInput + notAString + inputType);
   }
-  
+
   if (isEmpty(string)) {
     throw new Error(invalidInput + notAString + 'empty string');
   }
@@ -21,11 +20,11 @@ export const validateString = (string, cb) => {
   return cb(null, string);
 };
 
-const testValidateString = () => {
+const testValidate = () => {
   const input = 'actual string';
   const expected = 'actual string';
 
-  const actual = validateString(input, (error, result) => {
+  const actual = validate(input, (error, result) => {
     if (error) {
       console.error(error);
     } else {
