@@ -2,7 +2,7 @@
 
 > A javascript utilities package.
 
-![GitHub contributors](https://img.shields.io/github/contributors/rolling-bones/rb-toolbox) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/rolling-bones/rb-toolbox/main?logo=github)
+![GitHub contributors](https://img.shields.io/github/contributors/rolling-bones/rb-toolbox) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/rolling-bones/rb-toolbox/develop?logo=github)
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ Example text:
 
 ### Tech
 
-| [ESLint](https://eslint.org/) |
+| [Babel](https://babeljs.io/) | [ESLint](https://eslint.org/) |
 [Express](https://expressjs.com/) |
 [Husky](https://typicode.github.io/husky/) |
 [Jest](https://jestjs.io/) |
