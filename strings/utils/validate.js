@@ -19,24 +19,3 @@ export const validate = (string, cb) => {
 
   return cb(null, string);
 };
-
-const testValidate = () => {
-  const input = 'actual string';
-  const expected = 'actual string';
-
-  const actual = validate(input, (error, result) => {
-    if (error) {
-      console.error(error);
-    } else {
-      return result;
-    }
-  });
-
-  console.log('Expected: ', expected);
-  console.log('Actual: ', actual);
-
-  console.log('should match expected result: ', actual === expected);
-  // should not error if input is a string and is not empty
-  // should error if input is an empty string
-  // should error if input is not a string
-};
