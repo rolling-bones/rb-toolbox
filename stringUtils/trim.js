@@ -29,5 +29,3 @@ const testTrim = () => {
   // should remove new lines characters
   // should error if input is invalid
 };
-
-testTrim();
