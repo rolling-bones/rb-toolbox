@@ -1,4 +1,4 @@
-import { html, newLines, punctuation, quotedText, quotes, symbols, whitespace, zeroWidthCharacters } from '../../../strings/utils/regex.js';
+import { doubleQuotedText, html, newLines, punctuation, quotes, singleQuotedText, symbols, whitespace, zeroWidthCharacters } from '../../../strings/utils/regex.js';
 import { testString} from '../../constants.js';
 
 test('should match html', () => {
@@ -13,8 +13,12 @@ test('should match punctuation', () => {
   expect(`${testString}!`.match(punctuation)).not.toEqual(null);
 });
 
-test('should match quoted text', () => {
-  expect(`${testString}"text"`.match(quotedText)).not.toEqual(null);
+test('should match single quoted text', () => {
+  expect(`${testString}'text'`.match(singleQuotedText)).not.toEqual(null);
+});
+
+test('should match double quoted text', () => {
+  expect(`${testString}"text"`.match(doubleQuotedText)).not.toEqual(null);
 });
 
 test('should match quotes', () => {
